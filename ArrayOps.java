@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
         int [] array1 = {0};
-        int [] array2 = {-202, 48, 13, 7, 8};
+        int [] array2 = {2, 8, 3, 7, 8};
         System.out.println(findMissingInt(array1));
         System.out.println(counterMax(array2));
         System.out.println(secondMaxValue(array2));
@@ -62,7 +62,11 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int [] array) {
-        int [] arrayWithoutMax = new int [array.length - counterMax(array)];
+        if (counterMax(array) > 1) {
+            return maxValue(array);
+        }
+
+        int [] arrayWithoutMax = new int [array.length - 1];
         int index = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] != maxValue(array)) {
