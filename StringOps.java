@@ -150,7 +150,7 @@ public class StringOps {
     }
 
     public static int chrCounter (String string, char chr) {
-        chrCounter = 0;
+        int chrCounter = 0;
         for(int i = 0; i < string.length(); i++) {
             if (string.charAt(i) == chr) {
                 chrCounter++;
@@ -164,7 +164,7 @@ public class StringOps {
     
 
     public static int[] allIndexOf (String string, char chr) {
-        int [] array = new int [chrCounter(string)];
+        int [] array = new int [chrCounter(string, chr)];
         int index = 0;
 
         for(int i = 0; i < string.length(); i++) {
