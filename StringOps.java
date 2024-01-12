@@ -149,60 +149,31 @@ public class StringOps {
 
     }
 
-    // public static String camelCase (String string) {
-    //     String firstWord = "";
-    //     String stringWithout1 = "";
-    //     String newString = "";
-    //     int [] spaceIndex = new int [spaceCounter(string)]; 
-    //     int index = 0;
-
-    //     for (int i = 0; i < string.length(); i++) {
-    //         if (string.charAt(i) == ' ') {
-    //             spaceIndex[index] = i;
-    //             index++;
-
-    //         }
-    //     }
+    public static int chrCounter (String string, char chr) {
+        chrCounter = 0;
+        for(int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                chrCounter++;
+            }
+        }
+        return chrCounter;
 
 
-    //     if (string.charAt(0) == ' ') {
-    //         firstWord += string.substring(spaceIndex[0], spaceIndex[1]);
-    //         stringWithout1 += string.substring(spaceIndex[1]+1);
+    }
 
-    //     } else {
-    //         firstWord += string.substring(0, spaceIndex[0]);
-    //         stringWithout1 += string.substring(spaceIndex[0]+1);
+    
 
-    //     }
+    public static int[] allIndexOf (String string, char chr) {
+        int [] array = new int [chrCounter(string)];
+        int index = 0;
 
+        for(int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                array[index] = i;
+                index++;
+            }
 
-    //     for (int i = string.length() - firstWord.length(); i < string-1; i++) {
-
-    //         if (spaceIndex.indexOf(i) != -1 && (string.charAt(i+1) >= 'A' && ch <='Z')){
-    //             newstring += (char) (string.charAt(i+1) - 32);
-    //         } else newstring+= string.charAt(i)
-            
-
-    //         }
-
-
-
-
-    //     } 
-
-
-    //         }
-    //     }
-
-        
-
-
-
-    //     return "";
-    // }
-
-    // public static int[] allIndexOf (String string, char chr) {
-    //     // Write your code here:
-    //     return new int[1];
-    // }
+        }
+        return array;
+    }
 }
