@@ -111,7 +111,9 @@ public class StringOps {
                 if (string.charAt(i) == ' ' && string.charAt(i + 1) >= 'a' && string.charAt(i + 1) <= 'z') {
                     newString += (char) (string.charAt(i + 1) - 32);
                     i++;
-
+                } else if (string.charAt(i) == ' ' && string.charAt(i + 1) >= 'A' && string.charAt(i + 1) <= 'Z') {
+                    newString += string.charAt(i + 1);
+                    i++;
                 } else if ((string.charAt(i) >= 'A') && (string.charAt(i) <= 'Z')) {
                     newString += (char) (string.charAt(i) + 32);
 
@@ -128,6 +130,10 @@ public class StringOps {
                     newString += (char) (string.charAt(i + 1) - 32);
                     i++;
 
+                } else if (string.charAt(i) == ' ' && string.charAt(i + 1) >= 'A' && string.charAt(i + 1) <= 'Z') {
+                    newString += string.charAt(i + 1);
+                    i++;
+            
                 } else if ((string.charAt(i) >= 'A') && (string.charAt(i) <= 'Z')) {
                     newString += (char) (string.charAt(i) + 32);
 
